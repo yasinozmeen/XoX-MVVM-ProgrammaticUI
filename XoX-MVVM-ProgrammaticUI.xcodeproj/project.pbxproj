@@ -9,19 +9,30 @@
 /* Begin PBXBuildFile section */
 		843BDFBF2A29EBD8009B4EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFBE2A29EBD8009B4EAC /* AppDelegate.swift */; };
 		843BDFC12A29EBD8009B4EAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFC02A29EBD8009B4EAC /* SceneDelegate.swift */; };
-		843BDFC32A29EBD8009B4EAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFC22A29EBD8009B4EAC /* ViewController.swift */; };
+		843BDFC32A29EBD8009B4EAC /* LoginPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFC22A29EBD8009B4EAC /* LoginPageVC.swift */; };
 		843BDFC82A29EBD9009B4EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843BDFC72A29EBD9009B4EAC /* Assets.xcassets */; };
 		843BDFCB2A29EBD9009B4EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843BDFC92A29EBD9009B4EAC /* LaunchScreen.storyboard */; };
+		843BDFDA2A29EEB2009B4EAC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 843BDFD92A29EEB2009B4EAC /* SnapKit */; };
+		843BDFDC2A29EF96009B4EAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843BDFDB2A29EF96009B4EAC /* GoogleService-Info.plist */; };
+		843BDFDF2A29F447009B4EAC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 843BDFDE2A29F447009B4EAC /* FirebaseAuth */; };
+		843BDFE12A29F447009B4EAC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 843BDFE02A29F447009B4EAC /* FirebaseFirestore */; };
+		843BDFE62A29F84D009B4EAC /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFE52A29F84D009B4EAC /* LoginPageView.swift */; };
+		843BDFE92A29F93F009B4EAC /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFE82A29F93F009B4EAC /* View+Ext.swift */; };
+		843BDFEB2A29FE29009B4EAC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFEA2A29FE29009B4EAC /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		843BDFBB2A29EBD8009B4EAC /* XoX-MVVM-ProgrammaticUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XoX-MVVM-ProgrammaticUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843BDFBE2A29EBD8009B4EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843BDFC02A29EBD8009B4EAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		843BDFC22A29EBD8009B4EAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		843BDFC22A29EBD8009B4EAC /* LoginPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageVC.swift; sourceTree = "<group>"; };
 		843BDFC72A29EBD9009B4EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		843BDFCA2A29EBD9009B4EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		843BDFCC2A29EBD9009B4EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843BDFDB2A29EF96009B4EAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		843BDFE52A29F84D009B4EAC /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		843BDFE82A29F93F009B4EAC /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		843BDFEA2A29FE29009B4EAC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +40,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843BDFDA2A29EEB2009B4EAC /* SnapKit in Frameworks */,
+				843BDFDF2A29F447009B4EAC /* FirebaseAuth in Frameworks */,
+				843BDFE12A29F447009B4EAC /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,11 +71,9 @@
 				843BDFD42A29ED5E009B4EAC /* Model */,
 				843BDFD32A29ED5B009B4EAC /* View */,
 				843BDFD22A29ED4D009B4EAC /* ViewModel */,
-				843BDFC22A29EBD8009B4EAC /* ViewController.swift */,
 				843BDFD62A29ED68009B4EAC /* Support */,
 				843BDFD52A29ED65009B4EAC /* App */,
 				843BDFD72A29ED70009B4EAC /* Info */,
-				843BDFCC2A29EBD9009B4EAC /* Info.plist */,
 			);
 			path = "XoX-MVVM-ProgrammaticUI";
 			sourceTree = "<group>";
@@ -76,6 +88,10 @@
 		843BDFD32A29ED5B009B4EAC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				843BDFE72A29F92C009B4EAC /* View+Ext */,
+				843BDFE22A29F7BF009B4EAC /* LoginPage */,
+				843BDFE32A29F820009B4EAC /* GamePage */,
+				843BDFE42A29F826009B4EAC /* AcountPage */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -83,6 +99,7 @@
 		843BDFD42A29ED5E009B4EAC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				843BDFEA2A29FE29009B4EAC /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,8 +125,41 @@
 		843BDFD72A29ED70009B4EAC /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				843BDFCC2A29EBD9009B4EAC /* Info.plist */,
+				843BDFDB2A29EF96009B4EAC /* GoogleService-Info.plist */,
 			);
 			path = Info;
+			sourceTree = "<group>";
+		};
+		843BDFE22A29F7BF009B4EAC /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				843BDFC22A29EBD8009B4EAC /* LoginPageVC.swift */,
+				843BDFE52A29F84D009B4EAC /* LoginPageView.swift */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		843BDFE32A29F820009B4EAC /* GamePage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GamePage;
+			sourceTree = "<group>";
+		};
+		843BDFE42A29F826009B4EAC /* AcountPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AcountPage;
+			sourceTree = "<group>";
+		};
+		843BDFE72A29F92C009B4EAC /* View+Ext */ = {
+			isa = PBXGroup;
+			children = (
+				843BDFE82A29F93F009B4EAC /* View+Ext.swift */,
+			);
+			path = "View+Ext";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +178,11 @@
 			dependencies = (
 			);
 			name = "XoX-MVVM-ProgrammaticUI";
+			packageProductDependencies = (
+				843BDFD92A29EEB2009B4EAC /* SnapKit */,
+				843BDFDE2A29F447009B4EAC /* FirebaseAuth */,
+				843BDFE02A29F447009B4EAC /* FirebaseFirestore */,
+			);
 			productName = "XoX-MVVM-ProgrammaticUI";
 			productReference = 843BDFBB2A29EBD8009B4EAC /* XoX-MVVM-ProgrammaticUI.app */;
 			productType = "com.apple.product-type.application";
@@ -156,6 +211,10 @@
 				Base,
 			);
 			mainGroup = 843BDFB22A29EBD8009B4EAC;
+			packageReferences = (
+				843BDFD82A29EEB2009B4EAC /* XCRemoteSwiftPackageReference "SnapKit" */,
+				843BDFDD2A29F447009B4EAC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 843BDFBC2A29EBD8009B4EAC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -172,6 +231,7 @@
 			files = (
 				843BDFCB2A29EBD9009B4EAC /* LaunchScreen.storyboard in Resources */,
 				843BDFC82A29EBD9009B4EAC /* Assets.xcassets in Resources */,
+				843BDFDC2A29EF96009B4EAC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,9 +242,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843BDFC32A29EBD8009B4EAC /* ViewController.swift in Sources */,
+				843BDFC32A29EBD8009B4EAC /* LoginPageVC.swift in Sources */,
 				843BDFBF2A29EBD8009B4EAC /* AppDelegate.swift in Sources */,
+				843BDFE92A29F93F009B4EAC /* View+Ext.swift in Sources */,
 				843BDFC12A29EBD8009B4EAC /* SceneDelegate.swift in Sources */,
+				843BDFE62A29F84D009B4EAC /* LoginPageView.swift in Sources */,
+				843BDFEB2A29FE29009B4EAC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +388,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q6XS9G2H7P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "XoX-MVVM-ProgrammaticUI/Info.plist";
+				INFOPLIST_FILE = "XoX-MVVM-ProgrammaticUI/Info/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -352,7 +415,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q6XS9G2H7P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "XoX-MVVM-ProgrammaticUI/Info.plist";
+				INFOPLIST_FILE = "XoX-MVVM-ProgrammaticUI/Info/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -392,6 +455,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		843BDFD82A29EEB2009B4EAC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		843BDFDD2A29F447009B4EAC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		843BDFD92A29EEB2009B4EAC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 843BDFD82A29EEB2009B4EAC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		843BDFDE2A29F447009B4EAC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 843BDFDD2A29F447009B4EAC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		843BDFE02A29F447009B4EAC /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 843BDFDD2A29F447009B4EAC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 843BDFB32A29EBD8009B4EAC /* Project object */;
 }
