@@ -16,6 +16,9 @@ class LoginPageView : UIView {
     
     private let XoXTitleLabel: UILabel = {
         let label = UILabel()
+        label.text = "XoX"
+        label.textColor = .label
+        label.font = UIFont.systemFont(ofSize: 48, weight: .bold)
         return label
     }()
     private let usernameTF: UITextField = {
@@ -54,27 +57,31 @@ class LoginPageView : UIView {
     // MARK: - Actions
     
     @objc func didTappedSignButton() {
+        let tabBarController = TabBarController()
+        let navigationController = UINavigationController(rootViewController: tabBarController)
+        
+        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate,
+           let window = sceneDelegate.window {
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
+        }
     }
 }
+
 // MARK: - Snapkit View SetUp Part
 extension LoginPageView {
     
-    func setupXoXTitleLabel() {
+    private func setupXoXTitleLabel() {
         self.addSubview(XoXTitleLabel)
-        
-        XoXTitleLabel.text = "XoX"
-        XoXTitleLabel.textColor = .label
-        XoXTitleLabel.font = UIFont.systemFont(ofSize: 48, weight: .bold)
-        
-        
+
         XoXTitleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(UIScreen.main.bounds.height * 0.1184834123)
             make.centerX.equalToSuperview()
         }
     }
-    func setupUsernameTF() {
+    private func setupUsernameTF() {
         self.addSubview(usernameTF)
-
+        
         usernameTF.snp.makeConstraints { make in
             make.top.equalTo(XoXTitleLabel.snp.bottom).offset(20)
             make.centerX.equalTo(XoXTitleLabel)
@@ -83,9 +90,9 @@ extension LoginPageView {
         }
         
     }
-    func setupPasswordTF() {
+    private func setupPasswordTF() {
         self.addSubview(passwordTF)
-
+        
         passwordTF.snp.makeConstraints { make in
             make.top.equalTo(usernameTF.snp.bottom).offset(10)
             make.leading.equalTo(usernameTF)
@@ -93,7 +100,7 @@ extension LoginPageView {
             make.height.equalTo(usernameTF)
         }
     }
-    func setupSignButton() {
+    private func setupSignButton() {
         self.addSubview(signButton)
         
         signButton.snp.makeConstraints { make in

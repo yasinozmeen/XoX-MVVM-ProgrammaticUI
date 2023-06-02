@@ -22,17 +22,19 @@ final class LoginPageVC: UIViewController {
     }
     
 // MARK: - Functions
-    func configure () {
+    private func configure () {
         view.backgroundColor = .red
         view.addSubview(loginPageView)
         setupLoginPageView()
     }
     
-    func setupLoginPageView () {
+    private func setupLoginPageView () {
         loginPageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
+    
+   
     
 }
 

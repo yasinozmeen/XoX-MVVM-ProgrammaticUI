@@ -17,16 +17,19 @@ final class GamePageVC: UIViewController {
         super.viewDidLoad()
         configure()
         gamePageView.configure()
+        
     }
     
     // MARK: - Functions
-    func configure () {
+    private func configure () {
         view.backgroundColor = .red
         view.addSubview(gamePageView)
-        setupGamePageView()
+        setupLoginPageView()
     }
     
-    func setupGamePageView () {
-        
+    private func setupLoginPageView () {
+        gamePageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }
