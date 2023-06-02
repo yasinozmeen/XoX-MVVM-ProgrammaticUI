@@ -19,6 +19,10 @@
 		843BDFE62A29F84D009B4EAC /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFE52A29F84D009B4EAC /* LoginPageView.swift */; };
 		843BDFE92A29F93F009B4EAC /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFE82A29F93F009B4EAC /* View+Ext.swift */; };
 		843BDFEB2A29FE29009B4EAC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFEA2A29FE29009B4EAC /* Constants.swift */; };
+		843BDFF02A2A0ECC009B4EAC /* GamePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFEF2A2A0ECC009B4EAC /* GamePageVC.swift */; };
+		843BDFF22A2A0ED8009B4EAC /* GamePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFF12A2A0ED8009B4EAC /* GamePageView.swift */; };
+		843BE0202A2A182B009B4EAC /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE01F2A2A182B009B4EAC /* TabBarVC.swift */; };
+		843BE0222A2A1836009B4EAC /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE0212A2A1836009B4EAC /* TabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		843BDFE52A29F84D009B4EAC /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
 		843BDFE82A29F93F009B4EAC /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		843BDFEA2A29FE29009B4EAC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		843BDFEF2A2A0ECC009B4EAC /* GamePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePageVC.swift; sourceTree = "<group>"; };
+		843BDFF12A2A0ED8009B4EAC /* GamePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePageView.swift; sourceTree = "<group>"; };
+		843BE01F2A2A182B009B4EAC /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		843BE0212A2A1836009B4EAC /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +98,7 @@
 			children = (
 				843BDFE72A29F92C009B4EAC /* View+Ext */,
 				843BDFE22A29F7BF009B4EAC /* LoginPage */,
-				843BDFE32A29F820009B4EAC /* GamePage */,
-				843BDFE42A29F826009B4EAC /* AcountPage */,
+				843BE01C2A2A17CD009B4EAC /* TabBar */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,6 +150,8 @@
 		843BDFE32A29F820009B4EAC /* GamePage */ = {
 			isa = PBXGroup;
 			children = (
+				843BDFEF2A2A0ECC009B4EAC /* GamePageVC.swift */,
+				843BDFF12A2A0ED8009B4EAC /* GamePageView.swift */,
 			);
 			path = GamePage;
 			sourceTree = "<group>";
@@ -160,6 +169,25 @@
 				843BDFE82A29F93F009B4EAC /* View+Ext.swift */,
 			);
 			path = "View+Ext";
+			sourceTree = "<group>";
+		};
+		843BE01C2A2A17CD009B4EAC /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				843BE01D2A2A17ED009B4EAC /* TabBar */,
+				843BDFE32A29F820009B4EAC /* GamePage */,
+				843BDFE42A29F826009B4EAC /* AcountPage */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		843BE01D2A2A17ED009B4EAC /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				843BE01F2A2A182B009B4EAC /* TabBarVC.swift */,
+				843BE0212A2A1836009B4EAC /* TabBarView.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,10 +272,14 @@
 			files = (
 				843BDFC32A29EBD8009B4EAC /* LoginPageVC.swift in Sources */,
 				843BDFBF2A29EBD8009B4EAC /* AppDelegate.swift in Sources */,
+				843BDFF02A2A0ECC009B4EAC /* GamePageVC.swift in Sources */,
 				843BDFE92A29F93F009B4EAC /* View+Ext.swift in Sources */,
+				843BE0202A2A182B009B4EAC /* TabBarVC.swift in Sources */,
 				843BDFC12A29EBD8009B4EAC /* SceneDelegate.swift in Sources */,
 				843BDFE62A29F84D009B4EAC /* LoginPageView.swift in Sources */,
 				843BDFEB2A29FE29009B4EAC /* Constants.swift in Sources */,
+				843BE0222A2A1836009B4EAC /* TabBarView.swift in Sources */,
+				843BDFF22A2A0ED8009B4EAC /* GamePageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

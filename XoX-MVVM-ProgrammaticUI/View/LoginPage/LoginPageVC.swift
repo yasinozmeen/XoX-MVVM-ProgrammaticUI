@@ -10,21 +10,18 @@ import SnapKit
 
 
 final class LoginPageVC: UIViewController {
+    
 // MARK: - Properties
     let loginPageView = LoginPageView()
+    
 // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         configure()
         loginPageView.configure()
-        
-        
     }
     
 // MARK: - Functions
-    
     func configure () {
         view.backgroundColor = .red
         view.addSubview(loginPageView)
