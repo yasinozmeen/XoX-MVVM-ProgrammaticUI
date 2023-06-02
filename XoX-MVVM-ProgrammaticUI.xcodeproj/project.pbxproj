@@ -24,6 +24,8 @@
 		843BE0242A2A2A3C009B4EAC /* AccountPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE0232A2A2A3C009B4EAC /* AccountPageVC.swift */; };
 		843BE0262A2A61FE009B4EAC /* GamePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE0252A2A61FE009B4EAC /* GamePageView.swift */; };
 		843BE0282A2A637E009B4EAC /* autodraw 2.06.2023 13_15_46.png in Resources */ = {isa = PBXBuildFile; fileRef = 843BE0272A2A637E009B4EAC /* autodraw 2.06.2023 13_15_46.png */; };
+		843BE02A2A2A78D4009B4EAC /* AccountPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE0292A2A78D4009B4EAC /* AccountPageView.swift */; };
+		843BE02C2A2A7B75009B4EAC /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE02B2A2A7B75009B4EAC /* UILabel+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +44,9 @@
 		843BE0212A2A1836009B4EAC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		843BE0232A2A2A3C009B4EAC /* AccountPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPageVC.swift; sourceTree = "<group>"; };
 		843BE0252A2A61FE009B4EAC /* GamePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePageView.swift; sourceTree = "<group>"; };
-		843BE0272A2A637E009B4EAC /* autodraw 2.06.2023 13_15_46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "autodraw 2.06.2023 13_15_46.png"; sourceTree = SOURCE_ROOT; };
+		843BE0272A2A637E009B4EAC /* autodraw 2.06.2023 13_15_46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "autodraw 2.06.2023 13_15_46.png"; path = "XoX-MVVM-ProgrammaticUI/Support/autodraw 2.06.2023 13_15_46.png"; sourceTree = SOURCE_ROOT; };
+		843BE0292A2A78D4009B4EAC /* AccountPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPageView.swift; sourceTree = "<group>"; };
+		843BE02B2A2A7B75009B4EAC /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 		843BDFD62A29ED68009B4EAC /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				843BE0272A2A637E009B4EAC /* autodraw 2.06.2023 13_15_46.png */,
 				843BDFC72A29EBD9009B4EAC /* Assets.xcassets */,
 				843BDFC92A29EBD9009B4EAC /* LaunchScreen.storyboard */,
 			);
@@ -134,7 +139,6 @@
 		843BDFD72A29ED70009B4EAC /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				843BE0272A2A637E009B4EAC /* autodraw 2.06.2023 13_15_46.png */,
 				843BDFCC2A29EBD9009B4EAC /* Info.plist */,
 				843BDFDB2A29EF96009B4EAC /* GoogleService-Info.plist */,
 			);
@@ -162,6 +166,7 @@
 		843BDFE42A29F826009B4EAC /* AcountPage */ = {
 			isa = PBXGroup;
 			children = (
+				843BE0292A2A78D4009B4EAC /* AccountPageView.swift */,
 				843BE0232A2A2A3C009B4EAC /* AccountPageVC.swift */,
 			);
 			path = AcountPage;
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				843BDFE82A29F93F009B4EAC /* View+Ext.swift */,
+				843BE02B2A2A7B75009B4EAC /* UILabel+Ext.swift */,
 			);
 			path = "View+Ext";
 			sourceTree = "<group>";
@@ -278,11 +284,13 @@
 				843BE0262A2A61FE009B4EAC /* GamePageView.swift in Sources */,
 				843BDFBF2A29EBD8009B4EAC /* AppDelegate.swift in Sources */,
 				843BE0242A2A2A3C009B4EAC /* AccountPageVC.swift in Sources */,
+				843BE02A2A2A78D4009B4EAC /* AccountPageView.swift in Sources */,
 				843BDFF02A2A0ECC009B4EAC /* GamePageVC.swift in Sources */,
 				843BDFE92A29F93F009B4EAC /* View+Ext.swift in Sources */,
 				843BDFC12A29EBD8009B4EAC /* SceneDelegate.swift in Sources */,
 				843BDFE62A29F84D009B4EAC /* LoginPageView.swift in Sources */,
 				843BDFEB2A29FE29009B4EAC /* Constants.swift in Sources */,
+				843BE02C2A2A7B75009B4EAC /* UILabel+Ext.swift in Sources */,
 				843BE0222A2A1836009B4EAC /* TabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

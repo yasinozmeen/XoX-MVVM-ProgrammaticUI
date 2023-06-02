@@ -39,7 +39,8 @@ public enum ConstantsGamePage: String {
 public enum ConstantsAccountPage: String {
     case username  = "username"
     case winGames  = "win games : "
-    case loseGames = "lose games: "
+    case loseGames = "lose games : "
+    case totalGame = "total games : "
     case signOut   = "sign out"
 }
 

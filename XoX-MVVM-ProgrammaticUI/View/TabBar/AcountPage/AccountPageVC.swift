@@ -7,12 +7,29 @@
 
 import UIKit
 
-class AccountPageVC: UIViewController {
+final class AccountPageVC: UIViewController {
 
+// MARK: - Properties
+    let accountPageView = AccountPageView()
+    
+// MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray6
+        configure()
+        accountPageView.configure()
     }
     
-
+// MARK: - Functions
+    private func configure () {
+        view.backgroundColor = .red
+        view.addSubview(accountPageView)
+        setupAccountPageView()
+    }
+    
+    private func setupAccountPageView () {
+        accountPageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+     
 }
