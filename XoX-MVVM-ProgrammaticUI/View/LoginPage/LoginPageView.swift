@@ -11,12 +11,14 @@ import SnapKit
 
 class LoginPageView : UIView {
     
+// MARK: - Properties
+    weak var delegate: LoginPageViewDelegate?
+    typealias constant = ConstantsLoginPage
     
     // MARK: - UI Elements
-    
     private let XoXTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "XoX"
+        label.text = constant.title.rawValue
         label.textColor = .label
         label.font = UIFont.systemFont(ofSize: 48, weight: .bold)
         return label
@@ -24,21 +26,23 @@ class LoginPageView : UIView {
     private let usernameTF: UITextField = {
         let tf = UITextField()
         tf.borderStyle = .roundedRect
-        tf.placeholder = "username"
+        tf.placeholder = constant.username.rawValue
+        tf.text = "yasinozmeen3@gmail.com"
         return tf
     }()
     private let passwordTF: UITextField = {
         let tf = UITextField()
         tf.borderStyle = .roundedRect
-        tf.placeholder = "password"
+        tf.placeholder = constant.password.rawValue
+        tf.text = "Ykjoker.123"
         return tf
     }()
     private let signButton: UIButton = {
         let button = UIButton()
-        button.setTitle("sing in/up", for: .normal)
+        button.setTitle(constant.button.rawValue, for: .normal)
         button.tintColor = .label
         button.backgroundColor = .blue
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = UIScreen.main.bounds.height * 0.0059241706
         button.isUserInteractionEnabled = true
         button.addTarget(self, action: #selector(didTappedSignButton), for: .touchUpInside)
         return button
@@ -47,7 +51,6 @@ class LoginPageView : UIView {
     // MARK: - Function
     func configure () {
         backgroundColor = .systemGray6
-        
         setupXoXTitleLabel()
         setupUsernameTF()
         setupPasswordTF()
@@ -57,16 +60,12 @@ class LoginPageView : UIView {
     // MARK: - Actions
     
     @objc func didTappedSignButton() {
-        let tabBarController = TabBarController()
-        let navigationController = UINavigationController(rootViewController: tabBarController)
         
-        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate,
-           let window = sceneDelegate.window {
-            window.rootViewController = navigationController
-            window.makeKeyAndVisible()
-        }
+        delegate?.loginButtonTapped(mail: usernameTF.text!, password: passwordTF.text!)
     }
+    
 }
+
 
 // MARK: - Snapkit View SetUp Part
 extension LoginPageView {
@@ -83,7 +82,7 @@ extension LoginPageView {
         self.addSubview(usernameTF)
         
         usernameTF.snp.makeConstraints { make in
-            make.top.equalTo(XoXTitleLabel.snp.bottom).offset(20)
+            make.top.equalTo(XoXTitleLabel.snp.bottom).offset(UIScreen.main.bounds.height *  0.0236966825)
             make.centerX.equalTo(XoXTitleLabel)
             make.width.lessThanOrEqualTo(UIScreen.main.bounds.width * 0.8)
             make.width.greaterThanOrEqualTo(UIScreen.main.bounds.width * 0.5)
@@ -94,7 +93,7 @@ extension LoginPageView {
         self.addSubview(passwordTF)
         
         passwordTF.snp.makeConstraints { make in
-            make.top.equalTo(usernameTF.snp.bottom).offset(10)
+            make.top.equalTo(usernameTF.snp.bottom).offset(UIScreen.main.bounds.height *  0.0115)
             make.leading.equalTo(usernameTF)
             make.trailing.equalTo(usernameTF)
             make.height.equalTo(usernameTF)
@@ -104,10 +103,12 @@ extension LoginPageView {
         self.addSubview(signButton)
         
         signButton.snp.makeConstraints { make in
-            make.top.equalTo(passwordTF.snp.bottom).offset(20)
+            make.top.equalTo(passwordTF.snp.bottom).offset(UIScreen.main.bounds.height *  0.0236966825)
             make.leading.equalTo(passwordTF)
             make.trailing.equalTo(passwordTF)
             make.height.equalTo(passwordTF)
         }
     }
+    
+    
 }

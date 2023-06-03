@@ -6,36 +6,43 @@
 //
 
 import Foundation
-
+// MARK: - ConstantsGame
 public enum ConstantsGame: String {
     case X = "X"
     case Y = "Y"
 }
 
+// MARK: - ConstantsTabBar
 public enum ConstantsTabBar: String {
-    case account = "account"
-    case game    = "game"
+    case account      = "account"
+    case game         = "game"
+    case gameImage    = "gamecontroller"
+    case accountImage = "person"
 }
 
+// MARK: - ConstantsLoginPage
 public enum ConstantsLoginPage: String {
     case title    = "XoX"
-    case username = "username"
+    case username = "email"
     case password = "password"
     case button   = "sign in/up"
 }
 
+// MARK: - ConstantsLoginPageAlert
 public enum ConstantsLoginPageAlert: String {
     case tfIsEmpty  = "please enter username and password :)"
     case newAccount = "do you want to create a new account ?"
 }
 
-
+// MARK: - ConstantsGamePage
 public enum ConstantsGamePage: String {
     case turn = "turn : "
     case win  = "you win"
     case lose = "you lose"
     case tied = "you tied"
 }
+
+// MARK: - ConstantsAccountPage
 public enum ConstantsAccountPage: String {
     case username  = "username"
     case winGames  = "win games : "

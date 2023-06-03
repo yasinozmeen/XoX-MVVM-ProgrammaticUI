@@ -7,8 +7,11 @@
 
 import UIKit
 import SnapKit
+import Firebase
 
 class AccountPageView: UIView {
+//MARK: - Properties
+    
 // MARK: - UI Elements
     private let username    = CustomUILabel(text: ConstantsAccountPage.username.rawValue, fontSize: 48, weight: .black)
     private let winGame     = CustomUILabel(text: ConstantsAccountPage.winGames.rawValue, fontSize: 30, weight: .light)
@@ -22,7 +25,7 @@ class AccountPageView: UIView {
         button.backgroundColor = .label
         button.layer.cornerRadius = 5
         button.isUserInteractionEnabled = true
-        button.addTarget(AccountPageView.self, action: #selector(signOutDidTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signOutDidTapped), for: .touchUpInside)
         return button
     }()
     
@@ -38,7 +41,8 @@ class AccountPageView: UIView {
     
     //MARK: - Targets
     @objc func signOutDidTapped() {
-        
+//
+//        AccountPAgeCV.navigationController?.popViewController(animated: true)
     }
 }
 

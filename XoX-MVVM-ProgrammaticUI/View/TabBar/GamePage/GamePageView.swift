@@ -21,7 +21,7 @@ class GamePageView : UIView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
-        stackView.spacing = 3
+        stackView.spacing = UIScreen.main.bounds.width * 0.009
         stackView.backgroundColor = .label
         return stackView
     }()
@@ -35,7 +35,7 @@ class GamePageView : UIView {
                 let stackView = UIStackView()
                 stackView.axis = .vertical
                 stackView.distribution = .fillEqually
-                stackView.spacing = 3
+                stackView.spacing = UIScreen.main.bounds.height * 0.004
                 return stackView
             }()
             horizantalStackView.addArrangedSubview(verticalStackView)
@@ -70,7 +70,7 @@ class GamePageView : UIView {
     // MARK: - Targets
     
     @objc func buttonTapped(_ sender: UIButton) {
-        print(sender.restorationIdentifier)
+        print(sender.restorationIdentifier!)
     }
 }
 
@@ -90,7 +90,7 @@ extension GamePageView {
         
         horizantalStackView.snp.makeConstraints { make in
             make.top.equalTo(isTurn.snp.bottom).offset(UIScreen.main.bounds.height * 0.15)
-            make.width.height.equalTo(300)
+            make.width.height.equalTo(UIScreen.main.bounds.height * 0.355450237)
             make.centerX.equalToSuperview()
         }
     }

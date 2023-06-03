@@ -18,6 +18,7 @@ final class GamePageVC: UIViewController {
         configure()
         gamePageView.configure()
         
+        
     }
     
     // MARK: - Functions

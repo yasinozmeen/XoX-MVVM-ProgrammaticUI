@@ -23,9 +23,9 @@
 		843BE0222A2A1836009B4EAC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE0212A2A1836009B4EAC /* TabBarController.swift */; };
 		843BE0242A2A2A3C009B4EAC /* AccountPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE0232A2A2A3C009B4EAC /* AccountPageVC.swift */; };
 		843BE0262A2A61FE009B4EAC /* GamePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE0252A2A61FE009B4EAC /* GamePageView.swift */; };
-		843BE0282A2A637E009B4EAC /* autodraw 2.06.2023 13_15_46.png in Resources */ = {isa = PBXBuildFile; fileRef = 843BE0272A2A637E009B4EAC /* autodraw 2.06.2023 13_15_46.png */; };
 		843BE02A2A2A78D4009B4EAC /* AccountPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE0292A2A78D4009B4EAC /* AccountPageView.swift */; };
 		843BE02C2A2A7B75009B4EAC /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE02B2A2A7B75009B4EAC /* UILabel+Ext.swift */; };
+		84B2B8682A2BAC94007A18FF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B8672A2BAC94007A18FF /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +44,9 @@
 		843BE0212A2A1836009B4EAC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		843BE0232A2A2A3C009B4EAC /* AccountPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPageVC.swift; sourceTree = "<group>"; };
 		843BE0252A2A61FE009B4EAC /* GamePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePageView.swift; sourceTree = "<group>"; };
-		843BE0272A2A637E009B4EAC /* autodraw 2.06.2023 13_15_46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "autodraw 2.06.2023 13_15_46.png"; path = "XoX-MVVM-ProgrammaticUI/Support/autodraw 2.06.2023 13_15_46.png"; sourceTree = SOURCE_ROOT; };
 		843BE0292A2A78D4009B4EAC /* AccountPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPageView.swift; sourceTree = "<group>"; };
 		843BE02B2A2A7B75009B4EAC /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
+		84B2B8672A2BAC94007A18FF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +95,7 @@
 		843BDFD22A29ED4D009B4EAC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				84B2B8672A2BAC94007A18FF /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -129,7 +130,6 @@
 		843BDFD62A29ED68009B4EAC /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				843BE0272A2A637E009B4EAC /* autodraw 2.06.2023 13_15_46.png */,
 				843BDFC72A29EBD9009B4EAC /* Assets.xcassets */,
 				843BDFC92A29EBD9009B4EAC /* LaunchScreen.storyboard */,
 			);
@@ -268,7 +268,6 @@
 			files = (
 				843BDFCB2A29EBD9009B4EAC /* LaunchScreen.storyboard in Resources */,
 				843BDFC82A29EBD9009B4EAC /* Assets.xcassets in Resources */,
-				843BE0282A2A637E009B4EAC /* autodraw 2.06.2023 13_15_46.png in Resources */,
 				843BDFDC2A29EF96009B4EAC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +285,7 @@
 				843BE0242A2A2A3C009B4EAC /* AccountPageVC.swift in Sources */,
 				843BE02A2A2A78D4009B4EAC /* AccountPageView.swift in Sources */,
 				843BDFF02A2A0ECC009B4EAC /* GamePageVC.swift in Sources */,
+				84B2B8682A2BAC94007A18FF /* ViewModel.swift in Sources */,
 				843BDFE92A29F93F009B4EAC /* View+Ext.swift in Sources */,
 				843BDFC12A29EBD8009B4EAC /* SceneDelegate.swift in Sources */,
 				843BDFE62A29F84D009B4EAC /* LoginPageView.swift in Sources */,
