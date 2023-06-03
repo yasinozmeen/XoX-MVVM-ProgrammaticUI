@@ -49,34 +49,19 @@ final class LoginPageVC: UIViewController {
 
 // MARK: - LoginPageViewDelegate
 extension LoginPageVC: LoginPageViewDelegate {
-    func showAlert(title: String?, message: String?, style: UIAlertController.Style, firstActionTitle: String?, secondActionTitle: String?, actionStyle: UIAlertAction.Style, handler: (() -> Void)?) {
+    
+    func showAlert(title: String?, message: String?, style: UIAlertController.Style, firstActionTitle: String?, secondActionTitle: String?, actionStyle: UIAlertAction.Style, handler: ((String?) -> Void)?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
-        let firstAlertAction = UIAlertAction(title: firstActionTitle, style: actionStyle) { _ in
-            print("first")
+        let firstAlertAction = UIAlertAction(title: firstActionTitle, style: actionStyle) { action in
+            handler?(action.title)
         }
-        let secondAlertAction = UIAlertAction(title: secondActionTitle, style: .destructive ) { _ in
-            print("second")
+        let secondAlertAction = UIAlertAction(title: secondActionTitle, style: .destructive ) { action in
+            handler?(action.title)
         }
         alertController.addAction(firstAlertAction)
         alertController.addAction(secondAlertAction)
         present(alertController, animated: true)
     }
-    
-    func showAlert(title: String?, message: String?, style: UIAlertController.Style, actionTitle: String?, actionStyle: UIAlertAction.Style, handler: (() -> Void)?) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
-        let alertAction = UIAlertAction(title: actionTitle, style: actionStyle) { _ in
-            handler?()
-        }
-        alertController.addAction(alertAction)
-        present(alertController, animated: true)
-        
-    }
-    
-    
-    func showAlert(title: String?, message: String?, style: UIAlertController.Style, actionTitle: String?, actionStyle: UIAlertAction.Style, handler: ((UIAlertAction) -> Void)?) {
-        
-    }
-    
     
     func loginButtonTapped(mail:String, password:String) {
         viewModel.signIn(mail: mail, password: password)

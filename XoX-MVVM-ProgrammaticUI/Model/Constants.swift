@@ -25,13 +25,16 @@ public enum ConstantsLoginPage: String {
     case title    = "XoX"
     case username = "email"
     case password = "password"
-    case button   = "sign in/up"
+    case button   = "sign in"
 }
 
 // MARK: - ConstantsLoginPageAlert
 public enum ConstantsLoginPageAlert: String {
-    case tfIsEmpty  = "please enter username and password :)"
-    case newAccount = "do you want to create a new account ?"
+    case tfIsEmpty           = "please enter username and password :)"
+    case noOne               = "there is no one"
+    case doYouWantnewAccount = "do you want to create a new account ?"
+    case create              = "create it"
+    case neverMind           = "never mind"
 }
 
 // MARK: - ConstantsGamePage
