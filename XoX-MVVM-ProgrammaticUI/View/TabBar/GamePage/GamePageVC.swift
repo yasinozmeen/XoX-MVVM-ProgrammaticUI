@@ -7,25 +7,28 @@
 
 import UIKit.UIViewController
 import SnapKit
+import Firebase
 
 final class GamePageVC: UIViewController {
     // MARK: - Properties
-    let gamePageView = GamePageView()
+    let gamePageView     = GamePageView()
+    let viewModel        = GameViewModel()
+    let fireBaseDataBase = Firestore.firestore()
+    var currentUser: String?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         gamePageView.configure()
-        
-        
     }
     
     // MARK: - Functions
     private func configure () {
-        view.backgroundColor = .red
         view.addSubview(gamePageView)
+        gamePageView.delegate = self
         setupLoginPageView()
+        viewModel.getCurrentUser()
     }
     
     private func setupLoginPageView () {
@@ -33,4 +36,27 @@ final class GamePageVC: UIViewController {
             make.edges.equalToSuperview()
         }
     }
+    
+    
+    
+    
 }
+
+extension GamePageVC : GameProtocol {
+    func buttonDidTapped(tag: Int) {
+        
+    }
+}
+
+//fireBaseDataBase.collection("User").whereField("is online", isEqualTo: true)
+//    .addSnapshotListener { querySnapshot, error in
+//        guard let documents = querySnapshot?.documents else {
+//            print("Error fetching documents: \(error!)")
+//            return
+//        }
+//        let users = documents
+//        for i in users {
+//            print(i.data())
+//            print(i.documentID)
+//        }
+//    }

@@ -23,11 +23,7 @@ final class AccountPageVC: UIViewController {
 // MARK: - Functions
     private func configure () {
         view.addSubview(accountPageView)
-        
-        /// Delegation Equalization
         accountPageView.delegate = self
-        viewModel.delegate = self
-        
         setupAccountPageView()
     }
     
@@ -42,7 +38,6 @@ extension AccountPageVC: AccountDelegate{
     
     func signOutButtonTapped() {
         viewModel.singOut()
-        
     }
     
 }

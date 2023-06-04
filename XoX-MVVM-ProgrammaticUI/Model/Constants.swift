@@ -41,7 +41,7 @@ public enum ConstantsLoginPageAlert: String {
 
 // MARK: - ConstantsGamePage
 public enum ConstantsGamePage: String {
-    case turn = "turn : "
+    case title = "user..."
     case win  = "you win"
     case lose = "you lose"
     case tied = "you tied"

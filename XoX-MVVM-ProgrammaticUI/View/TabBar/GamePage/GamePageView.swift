@@ -9,10 +9,13 @@ import UIKit
 import SnapKit
 
 class GamePageView : UIView {
+// MARK: - Properties
+    weak var delegate: GameProtocol?
+    
     // MARK: - UI Elements
     private let isTurn: UILabel = {
         let label = UILabel()
-        label.text = ConstantsGamePage.turn.rawValue
+        label.text = ConstantsGamePage.title.rawValue
         label.textColor = .label
         label.font = UIFont.systemFont(ofSize: 48, weight: .bold)
         return label
@@ -44,7 +47,6 @@ class GamePageView : UIView {
                     
                 let xoButton: UIButton = {
                     let button = UIButton()
-                    button.setTitle("X", for: .normal)
                     button.setTitleColor(.label, for: .normal)
                     button.titleLabel?.font = UIFont(name: "Helvetica", size: 35)
                     button.backgroundColor = .systemGray6
@@ -53,7 +55,7 @@ class GamePageView : UIView {
                     return button
                 }()
                 
-                xoButton.restorationIdentifier = String(y)+String(x)
+                xoButton.tag = ((y - 1) * 3) + x
                 verticalStackView.addArrangedSubview(xoButton)
             }
         }
@@ -70,7 +72,7 @@ class GamePageView : UIView {
     // MARK: - Targets
     
     @objc func buttonTapped(_ sender: UIButton) {
-        print(sender.restorationIdentifier!)
+        delegate?.buttonDidTapped(tag: sender.tag)
     }
 }
 

@@ -49,6 +49,7 @@ final class LoginPageVC: UIViewController {
 
 // MARK: - LoginPageViewDelegate
 extension LoginPageVC: LoginDelegate {
+    
     func goToTabBarController() {
         navigationController?.pushViewController(TabBarController(), animated: true)
     }

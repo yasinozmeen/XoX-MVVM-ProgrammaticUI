@@ -17,7 +17,7 @@ final class AccountViewModel {
     weak var delegate: AccountDelegate?
     let fireBaseDataBase = Firestore.firestore()
     let firebaseAuth = Auth.auth()
-    var lastUserMail: String?
+    public var lastUserMail: String?
     
     // MARK: - Functions
     func singOut(){
@@ -40,7 +40,6 @@ final class AccountViewModel {
                 if let err = err {
                     print("Error writing document: \(err)")
                 } else {
-                    print("Document successfully written!")
                 }
             }
             handler()

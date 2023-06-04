@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8430A5902A2C8C5B0025C824 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8430A58F2A2C8C5B0025C824 /* AccountViewModel.swift */; };
+		8430A5922A2CF08F0025C824 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8430A5912A2CF08F0025C824 /* GameViewModel.swift */; };
 		843BDFBF2A29EBD8009B4EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFBE2A29EBD8009B4EAC /* AppDelegate.swift */; };
 		843BDFC12A29EBD8009B4EAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFC02A29EBD8009B4EAC /* SceneDelegate.swift */; };
 		843BDFC32A29EBD8009B4EAC /* LoginPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFC22A29EBD8009B4EAC /* LoginPageVC.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		8430A58F2A2C8C5B0025C824 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		8430A5912A2CF08F0025C824 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		843BDFBB2A29EBD8009B4EAC /* XoX-MVVM-ProgrammaticUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XoX-MVVM-ProgrammaticUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843BDFBE2A29EBD8009B4EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843BDFC02A29EBD8009B4EAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				84B2B8672A2BAC94007A18FF /* LoginViewModel.swift */,
 				8430A58F2A2C8C5B0025C824 /* AccountViewModel.swift */,
+				8430A5912A2CF08F0025C824 /* GameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				843BDFC32A29EBD8009B4EAC /* LoginPageVC.swift in Sources */,
 				843BE0262A2A61FE009B4EAC /* GamePageView.swift in Sources */,
 				843BDFBF2A29EBD8009B4EAC /* AppDelegate.swift in Sources */,
+				8430A5922A2CF08F0025C824 /* GameViewModel.swift in Sources */,
 				843BE0242A2A2A3C009B4EAC /* AccountPageVC.swift in Sources */,
 				843BE02A2A2A78D4009B4EAC /* AccountPageView.swift in Sources */,
 				843BDFF02A2A0ECC009B4EAC /* GamePageVC.swift in Sources */,
