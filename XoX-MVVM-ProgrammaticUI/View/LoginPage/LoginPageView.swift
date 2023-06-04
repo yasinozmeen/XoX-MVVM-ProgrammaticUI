@@ -12,7 +12,7 @@ import SnapKit
 class LoginPageView : UIView {
     
 // MARK: - Properties
-    weak var delegate: LoginPageViewDelegate?
+    weak var delegate: LoginDelegate?
     typealias constant = ConstantsLoginPage
     
     // MARK: - UI Elements
@@ -57,10 +57,8 @@ class LoginPageView : UIView {
         setupSignButton()
     }
     
-    // MARK: - Actions
-    
+    // MARK: - Targets
     @objc func didTappedSignButton() {
-        
         delegate?.loginButtonTapped(mail: usernameTF.text!, password: passwordTF.text!)
     }
     

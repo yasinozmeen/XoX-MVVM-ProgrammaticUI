@@ -11,7 +11,7 @@ import SnapKit
 final class LoginPageVC: UIViewController {
 // MARK: - Properties
     let loginPageView = LoginPageView()
-    let viewModel = ViewModel()
+    let viewModel = LoginViewModel()
     
 // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -48,9 +48,21 @@ final class LoginPageVC: UIViewController {
 }
 
 // MARK: - LoginPageViewDelegate
-extension LoginPageVC: LoginPageViewDelegate {
+extension LoginPageVC: LoginDelegate {
+    func goToTabBarController() {
+        navigationController?.pushViewController(TabBarController(), animated: true)
+    }
     
-    func showAlert(title: String?, message: String?, style: UIAlertController.Style, firstActionTitle: String?, secondActionTitle: String?, actionStyle: UIAlertAction.Style, handler: ((String?) -> Void)?) {
+    
+    func showAlert(title: String?, message: String?, style: UIAlertController.Style, firstActionTitle: String?, actionStyle: UIAlertAction.Style) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        let firstAlertAction = UIAlertAction(title: firstActionTitle, style: actionStyle)
+        alertController.addAction(firstAlertAction)
+        present(alertController, animated: true)
+    }
+    
+    
+    func createUserShowAlert(title: String?, message: String?, style: UIAlertController.Style, firstActionTitle: String?, secondActionTitle: String?, actionStyle: UIAlertAction.Style, handler: ((String?) -> Void)?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         let firstAlertAction = UIAlertAction(title: firstActionTitle, style: actionStyle) { action in
             handler?(action.title)

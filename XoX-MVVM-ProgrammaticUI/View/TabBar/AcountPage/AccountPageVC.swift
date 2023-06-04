@@ -11,7 +11,8 @@ final class AccountPageVC: UIViewController {
 
 // MARK: - Properties
     let accountPageView = AccountPageView()
-    
+    let viewModel       = AccountViewModel()
+    let loginPageVC     = LoginPageVC()
 // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +22,12 @@ final class AccountPageVC: UIViewController {
     
 // MARK: - Functions
     private func configure () {
-        view.backgroundColor = .red
         view.addSubview(accountPageView)
+        
+        /// Delegation Equalization
+        accountPageView.delegate = self
+        viewModel.delegate = self
+        
         setupAccountPageView()
     }
     
@@ -31,5 +36,16 @@ final class AccountPageVC: UIViewController {
             make.edges.equalToSuperview()
         }
     }
-     
 }
+
+extension AccountPageVC: AccountDelegate{
+    
+    func signOutButtonTapped() {
+        viewModel.singOut()
+        
+    }
+    
+}
+
+
+

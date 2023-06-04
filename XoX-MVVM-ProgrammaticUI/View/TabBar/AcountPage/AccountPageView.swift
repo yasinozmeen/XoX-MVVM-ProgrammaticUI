@@ -11,16 +11,18 @@ import Firebase
 
 class AccountPageView: UIView {
 //MARK: - Properties
+    weak var delegate: AccountDelegate?
+    typealias constant = ConstantsAccountPage
     
 // MARK: - UI Elements
-    private let username    = CustomUILabel(text: ConstantsAccountPage.username.rawValue, fontSize: 48, weight: .black)
-    private let winGame     = CustomUILabel(text: ConstantsAccountPage.winGames.rawValue, fontSize: 30, weight: .light)
-    private let loseGame    = CustomUILabel(text: ConstantsAccountPage.loseGames.rawValue, fontSize: 30, weight: .light)
-    private let totalGame   = CustomUILabel(text: ConstantsAccountPage.totalGame.rawValue, fontSize: 30, weight: .light)
+    private let username    = CustomUILabel(text: constant.username.rawValue, fontSize: 48, weight: .black)
+    private let winGame     = CustomUILabel(text: constant.winGames.rawValue, fontSize: 30, weight: .light)
+    private let loseGame    = CustomUILabel(text: constant.loseGames.rawValue, fontSize: 30, weight: .light)
+    private let totalGame   = CustomUILabel(text: constant.totalGame.rawValue, fontSize: 30, weight: .light)
     
     private let signOutButton: UIButton = {
         let button = UIButton()
-        button.setTitle(ConstantsAccountPage.signOut.rawValue, for: .normal)
+        button.setTitle(constant.signOut.rawValue, for: .normal)
         button.tintColor = .label
         button.backgroundColor = .label
         button.layer.cornerRadius = 5
@@ -41,8 +43,7 @@ class AccountPageView: UIView {
     
     //MARK: - Targets
     @objc func signOutDidTapped() {
-//
-//        AccountPAgeCV.navigationController?.popViewController(animated: true)
+        delegate?.signOutButtonTapped()
     }
 }
 
