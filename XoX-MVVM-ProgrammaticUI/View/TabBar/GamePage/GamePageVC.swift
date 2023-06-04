@@ -37,26 +37,11 @@ final class GamePageVC: UIViewController {
         }
     }
     
-    
-    
-    
 }
 
 extension GamePageVC : GameProtocol {
     func buttonDidTapped(tag: Int) {
-        
+        viewModel.didPlay(tag: tag)
     }
 }
 
-//fireBaseDataBase.collection("User").whereField("is online", isEqualTo: true)
-//    .addSnapshotListener { querySnapshot, error in
-//        guard let documents = querySnapshot?.documents else {
-//            print("Error fetching documents: \(error!)")
-//            return
-//        }
-//        let users = documents
-//        for i in users {
-//            print(i.data())
-//            print(i.documentID)
-//        }
-//    }

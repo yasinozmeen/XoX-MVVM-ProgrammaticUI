@@ -19,6 +19,7 @@ final class GameViewModel {
     var currentUser: String?
     var onlineUsers: [String?] = []
     var matchUsers: [String] = []
+    
 // MARK: - Functions
     
     func getCurrentUser() {
@@ -51,10 +52,25 @@ final class GameViewModel {
     }
     private func createGameCollection() {
         fireBaseDataBase.collection("Game").document(matchUsers[0]+matchUsers[1]).setData([
-            "game":true
+                "row":[0,0,0,0,0,0,0,0],
+            "lastUser":currentUser ?? "Error"
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
+            } else {
+            }
+        }
+    }
+    
+    func didPlay(tag:Int) {
+        let row = "row.\(tag)"
+        
+        fireBaseDataBase.collection("Game").document(matchUsers[0]+matchUsers[1]).updateData([
+            row: 1,
+            "lastUser":currentUser ?? "Error"
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
             } else {
             }
         }
