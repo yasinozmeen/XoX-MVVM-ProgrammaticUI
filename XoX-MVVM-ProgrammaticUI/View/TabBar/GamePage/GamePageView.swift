@@ -22,7 +22,7 @@ class GamePageView : UIView {
     }()
     private let horizantalStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.axis = .horizontal
+        stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.spacing = UIScreen.main.bounds.width * 0.009
         stackView.backgroundColor = .label
@@ -37,7 +37,7 @@ class GamePageView : UIView {
             
             let verticalStackView: UIStackView = {
                 let stackView = UIStackView()
-                stackView.axis = .vertical
+                stackView.axis = .horizontal
                 stackView.distribution = .fillEqually
                 stackView.spacing = UIScreen.main.bounds.height * 0.004
                 return stackView

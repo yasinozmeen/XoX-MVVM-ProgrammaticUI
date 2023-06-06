@@ -43,7 +43,7 @@ final class GamePageVC: UIViewController {
 
 extension GamePageVC : GameProtocol {
     func buttonTitleChange(title: String, tag: Int) {
-        gamePageView.buttons[tag - 1]!.setTitle(title, for: .normal)
+        
     }
     
     func changeTurnLabelP(turnIs:String) {
@@ -53,6 +53,5 @@ extension GamePageVC : GameProtocol {
     func buttonDidTappedP(tag:Int) {
         viewModel.buttonDidTapped(tag: tag)
     }
-    
 }
     

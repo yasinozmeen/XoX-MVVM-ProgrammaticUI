@@ -96,7 +96,6 @@ class GameViewModel {
                     return
                 }
                 saveDataToModel(data: data)
-                changeButtonTitle(tag: 0, meOrHe: false)
                 changeTurnLabel()
             }
     }
@@ -140,7 +139,6 @@ class GameViewModel {
             } else {
             }
         }
-        changeButtonTitle(tag: tag, meOrHe: true)
         changeTurnLabel()
     }
     
@@ -157,42 +155,9 @@ class GameViewModel {
     }
     
     func changeButtonTitle(tag:Int?, meOrHe:Bool) {
-        if meOrHe {
-            if let tag = tag {
-                delegate?.buttonTitleChange(title: ConstantsGame.X.rawValue, tag: tag)
-            }
-        } else {
-            isItTapped {
-                
-            }
-        }
+       
     }
     
-    func isItTapped(handler: ()->()) {
-        let lastRow = lastGameData?.row
-        let currentRow = gameData?.row
-        
-        if let lastRow = lastRow, let currentRow = currentRow {
-            for a in lastRow {
-                for b in currentRow {
-                    
-                }
-            }
-        }
-        
-    }
+   
     
 }
-//if  a.key == b.key && a.value != b.value {
-//    if a.value == 0 {
-//
-//    }else{
-//        print(lastRow)
-//        print("---------------------")
-//        print(currentRow)
-//        print("---------------------")
-//        print("---------------------")
-//        print("---------------------")
-//    }
-//
-//}
