@@ -60,7 +60,7 @@ class GameViewModel {
     
     private func createGameCollection(handler: @escaping ()->()) {
         fireBaseDataBase.collection("Game").document(matchUsers[0]+matchUsers[1]).setData([
-            "row":["1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,],
+            "row":["1":" ","2":" ","3":" ","4":" ","5":" ","6":" ","7":" ","8":" ","9":" ",],
             "lastUser":currentUser ?? "Error"
         ]) { err in
             if let err = err {
@@ -121,7 +121,7 @@ class GameViewModel {
     }
     private func checkPlayIsTrue(tag:Int, handler: @escaping (Bool)->()) {
         if let value = gameData?.row[tag]{
-            if value != 1 {
+            if value == " " {
                 handler(true)
             }else{
                 handler(false)
@@ -131,7 +131,7 @@ class GameViewModel {
     
     private func sendGameValue(tag: Int) {
         fireBaseDataBase.collection("Game").document(matchUsers[0]+matchUsers[1]).updateData([
-            "row.\(tag)": 1,
+            "row.\(tag)": currentUser ?? "error",
             "lastUser":currentUser ?? "Error"
         ]) { err in
             if let err = err {

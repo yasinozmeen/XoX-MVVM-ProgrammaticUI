@@ -9,5 +9,5 @@ import Foundation
 
 struct GameModel: Codable {
     var lastUser: String
-    var row: [Int : Int]
+    var row: [Int : String]
 }
