@@ -9,7 +9,7 @@ import Foundation
 // MARK: - ConstantsGame
 public enum ConstantsGame: String {
     case X = "X"
-    case Y = "Y"
+    case O = "O"
 }
 
 // MARK: - ConstantsTabBar

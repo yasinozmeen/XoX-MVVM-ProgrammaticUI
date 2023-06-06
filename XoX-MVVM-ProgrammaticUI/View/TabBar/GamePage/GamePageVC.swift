@@ -15,6 +15,7 @@ final class GamePageVC: UIViewController {
     let viewModel        = GameViewModel()
     let fireBaseDataBase = Firestore.firestore()
     var currentUser: String?
+//    var gameProtocol:GameProtocol?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -27,6 +28,7 @@ final class GamePageVC: UIViewController {
     private func configure () {
         view.addSubview(gamePageView)
         gamePageView.delegate = self
+        viewModel.delegate = self
         setupLoginPageView()
         viewModel.getCurrentUser()
     }
@@ -40,8 +42,17 @@ final class GamePageVC: UIViewController {
 }
 
 extension GamePageVC : GameProtocol {
-    func buttonDidTapped(tag: Int) {
-        viewModel.didPlay(tag: tag)
+    func buttonTitleChange(title: String, tag: Int) {
+        gamePageView.buttons[tag - 1]!.setTitle(title, for: .normal)
     }
+    
+    func changeTurnLabelP(turnIs:String) {
+        gamePageView.isTurn.text = turnIs
+    }
+    
+    func buttonDidTappedP(tag:Int) {
+        viewModel.buttonDidTapped(tag: tag)
+    }
+    
 }
-
+    

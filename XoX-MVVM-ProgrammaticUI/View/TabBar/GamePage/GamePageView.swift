@@ -13,7 +13,7 @@ class GamePageView : UIView {
     weak var delegate: GameProtocol?
     
     // MARK: - UI Elements
-    private let isTurn: UILabel = {
+    let isTurn: UILabel = {
         let label = UILabel()
         label.text = ConstantsGamePage.title.rawValue
         label.textColor = .label
@@ -28,6 +28,7 @@ class GamePageView : UIView {
         stackView.backgroundColor = .label
         return stackView
     }()
+    var buttons:[UIButton?] = []
     
 
 // MARK: - Function
@@ -54,8 +55,8 @@ class GamePageView : UIView {
                     button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                     return button
                 }()
-                
-                xoButton.tag = ((y - 1) * 3) + x
+                buttons.append(xoButton)
+                xoButton.tag = ((x - 1) * 3) + y
                 verticalStackView.addArrangedSubview(xoButton)
             }
         }
@@ -72,7 +73,7 @@ class GamePageView : UIView {
     // MARK: - Targets
     
     @objc func buttonTapped(_ sender: UIButton) {
-        delegate?.buttonDidTapped(tag: sender.tag)
+        delegate?.buttonDidTappedP(tag:sender.tag)
     }
 }
 

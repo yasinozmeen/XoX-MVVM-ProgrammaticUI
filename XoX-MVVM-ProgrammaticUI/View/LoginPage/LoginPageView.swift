@@ -27,7 +27,7 @@ class LoginPageView : UIView {
         let tf = UITextField()
         tf.borderStyle = .roundedRect
         tf.placeholder = constant.username.rawValue
-        tf.text = "yasinozmeen3@gmail.com"
+        tf.text = "yasinozmeen2@gmail.com"
         return tf
     }()
     private let passwordTF: UITextField = {
