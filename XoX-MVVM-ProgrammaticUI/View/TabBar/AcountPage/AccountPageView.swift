@@ -15,10 +15,7 @@ class AccountPageView: UIView {
     typealias constant = ConstantsAccountPage
     
 // MARK: - UI Elements
-    private let username    = CustomUILabel(text: constant.username.rawValue, fontSize: 48, weight: .black)
-    private let winGame     = CustomUILabel(text: constant.winGames.rawValue, fontSize: 30, weight: .light)
-    private let loseGame    = CustomUILabel(text: constant.loseGames.rawValue, fontSize: 30, weight: .light)
-    private let totalGame   = CustomUILabel(text: constant.totalGame.rawValue, fontSize: 30, weight: .light)
+    private let title = CustomUILabel(text: constant.username.rawValue, fontSize: 48, weight: .black)
     
     private let signOutButton: UIButton = {
         let button = UIButton()
@@ -35,9 +32,6 @@ class AccountPageView: UIView {
     func configure () {
         backgroundColor = .systemGray6
         setupUserName()
-        setupWinGame()
-        setupLoseGame()
-        setupTotalGame()
         setupSignOutButton()
     }
     
@@ -50,38 +44,10 @@ class AccountPageView: UIView {
 // MARK: - Setup View With SnapKit
 extension AccountPageView {
     func setupUserName() {
-        addSubview(username)
+        addSubview(title)
         
-        username.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(UIScreen.main.bounds.height * 0.1184834123)
-        }
-    }
-    
-    func setupWinGame() {
-        addSubview(winGame)
-        
-        winGame.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(username.snp_bottomMargin).offset(UIScreen.main.bounds.height * 0.1470588235)
-        }
-    }
-
-    func setupLoseGame() {
-        addSubview(loseGame)
-        
-        loseGame.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(winGame.snp_bottomMargin).offset(UIScreen.main.bounds.height * 0.0588235294)
-        }
-    }
-
-    func setupTotalGame() {
-        addSubview(totalGame)
-        
-        totalGame.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(loseGame.snp_bottomMargin).offset(UIScreen.main.bounds.height * 0.0588235294)
+        title.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
         }
     }
 

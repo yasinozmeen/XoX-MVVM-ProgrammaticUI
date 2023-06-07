@@ -50,10 +50,9 @@ public enum ConstantsGamePage: String {
 
 // MARK: - ConstantsAccountPage
 public enum ConstantsAccountPage: String {
-    case username  = "username"
+    case username  = "XoX"
     case winGames  = "win games : "
     case loseGames = "lose games : "
     case totalGame = "total games : "
     case signOut   = "sign out"
 }
-

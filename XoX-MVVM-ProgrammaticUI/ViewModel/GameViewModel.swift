@@ -16,6 +16,7 @@ protocol GameProtocol: AnyObject {
                    style: UIAlertController.Style,
                    actiontitle:String,
                    actionStyle:UIAlertAction.Style)
+    func restartBoard()
 }
 
 class GameViewModel {
@@ -26,7 +27,6 @@ class GameViewModel {
     var onlineUsers: [String?] = []
     var matchUsers: [String] = []
     var gameData: GameModel?
-    var lastGameData: GameModel?
     // MARK: - Functions
     
     func getCurrentUser() {
@@ -104,6 +104,14 @@ class GameViewModel {
                 saveDataToModel(data: data)
                 changeButtonTitle(tag: nil)
                 changeTurnLabel()
+                checkBoardIsFull { bool in
+                    if bool {
+                        self.delegate?.showAlert(title: ConstantsGamePage.tied.rawValue,
+                                            style: .alert,
+                                            actiontitle: ConstantsGamePage.ok.rawValue,
+                                            actionStyle: .cancel)
+                    }
+                }
             }
         
     }
@@ -111,23 +119,22 @@ class GameViewModel {
     private func saveDataToModel(data: [String:Any]){
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-            lastGameData = gameData
             gameData = try JSONDecoder().decode(GameModel.self, from: jsonData)
         } catch {
             print("Hata: \(error)")
         }
-        isHeWon() {
-            restartGame()
-        }
+        isHeWon()
     }
     
     private func checkIsItYourTurn(currentUser:String?, handler: @escaping (Bool)->()) {
-        if currentUser == gameData!.lastUser {
-            /// not your turn
-            handler(false)
-        }else{
-            /// your turn
-            handler(true)
+        if let gameData = gameData {
+            if currentUser == gameData.lastUser {
+                /// not your turn
+                handler(false)
+            }else{
+                /// your turn
+                handler(true)
+            }
         }
     }
     private func checkPlayIsTrue(tag:Int, handler: @escaping (Bool)->()) {
@@ -188,9 +195,9 @@ class GameViewModel {
 // MARK: - Game Rules
     func checkWinCondition(handler: @escaping (Bool)->())  {
         if let gameData = gameData, let currentUser = currentUser {
-            let winCombinations: [[Int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9], // horizantal wins
-                                            [1, 4, 7], [2, 5, 8], [3, 6, 9], // vertical wins
-                                            [1, 5, 9], [3, 5, 7]] // cross wins
+            let winCombinations: [[Int]] = [[0, 1, 2], [3, 4, 5], [6, 7, 8], // yatay kazanmalar
+                                                    [0, 3, 6], [1, 4, 7], [2, 5, 8], // dikey kazanmalar
+                                                    [0, 4, 8], [2, 4, 6]] // çapraz kazanmalar
             
             for combination in winCombinations {
                 let firstIndex = combination[0]
@@ -217,9 +224,10 @@ class GameViewModel {
                 } else {
                 }
             }
+            
         }
     }
-    func isHeWon(handler: ()->()) {
+    func isHeWon() {
         if let whoWin = gameData?.whoWin, let currentUser = currentUser  {
             if whoWin != currentUser && whoWin != " "{
                 delegate?.showAlert(title: ConstantsGamePage.lose.rawValue,
@@ -229,13 +237,20 @@ class GameViewModel {
             }
         }
     }
-    func restartGame() {
-        
-    }
     
     func checkBoardIsFull(handler: @escaping (Bool)->()) {
-        
+        if let gameData = gameData {
+             let isFull = gameData.row.values.allSatisfy ({ $0 != " " })
+             handler(isFull)
+         } else {
+             handler(false)
+         }
     }
     
+    func restartGame() {
+        gameData?.whoWin = nil
+        AccountViewModel().singOut()
+    }
+
     
 }

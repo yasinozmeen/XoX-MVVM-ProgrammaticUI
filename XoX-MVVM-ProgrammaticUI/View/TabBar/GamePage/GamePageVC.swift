@@ -47,8 +47,8 @@ extension GamePageVC : GameProtocol {
                    actiontitle:String,
                    actionStyle:UIAlertAction.Style) {
         let alertController = UIAlertController(title: title, message: nil, preferredStyle: style)
-        let alertAction = UIAlertAction(title: actiontitle, style: actionStyle) { action in
-            
+        let alertAction = UIAlertAction(title: actiontitle, style: actionStyle) { [self] action in
+            viewModel.restartGame()
         }
         alertController.addAction(alertAction)
         present(alertController, animated: true)
@@ -64,6 +64,11 @@ extension GamePageVC : GameProtocol {
     
     func buttonDidTappedP(tag:Int) {
         viewModel.buttonDidTapped(tag: tag)
+    }
+    func restartBoard() {
+        for button in gamePageView.buttons{
+            button?.setTitle(nil, for: .normal)
+        }
     }
 }
     
