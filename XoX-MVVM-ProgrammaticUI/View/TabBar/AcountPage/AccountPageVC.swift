@@ -13,6 +13,7 @@ final class AccountPageVC: UIViewController {
     let accountPageView = AccountPageView()
     let viewModel       = AccountViewModel()
     let loginPageVC     = LoginPageVC()
+    
 // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +35,11 @@ final class AccountPageVC: UIViewController {
     }
 }
 
+// MARK: - Delegate Part
 extension AccountPageVC: AccountDelegate{
-    
     func signOutButtonTapped() {
         viewModel.singOut()
     }
-    
 }
 
 

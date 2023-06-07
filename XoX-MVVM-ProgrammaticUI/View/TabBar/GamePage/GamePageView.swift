@@ -5,7 +5,7 @@
 //  Created by Kadir Yasin Özmen on 2.06.2023.
 //
 
-import UIKit
+import UIKit.UIView
 import SnapKit
 
 class GamePageView : UIView {
@@ -20,32 +20,31 @@ class GamePageView : UIView {
         label.font = UIFont.systemFont(ofSize: 48, weight: .bold)
         return label
     }()
+    
     private let horizantalStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.spacing = UIScreen.main.bounds.width * 0.009
-//        stackView.backgroundColor = .label
-        return stackView
+        let verticalStackView = UIStackView()
+        verticalStackView.axis = .vertical
+        verticalStackView.distribution = .fillEqually
+        verticalStackView.spacing = UIScreen.main.bounds.width * 0.009
+        return verticalStackView
     }()
+    
     var buttons:[UIButton?] = []
     
 
 // MARK: - Function
     func setupVerticalStackViewsAndButtons (){
         for x in 1...3{
-            
-            let verticalStackView: UIStackView = {
+            let horizontalStackView: UIStackView = {
                 let stackView = UIStackView()
                 stackView.axis = .horizontal
                 stackView.distribution = .fillEqually
                 stackView.spacing = UIScreen.main.bounds.height * 0.004
                 return stackView
             }()
-            horizantalStackView.addArrangedSubview(verticalStackView)
+            horizantalStackView.addArrangedSubview(horizontalStackView)
             
             for y in 1...3{
-                    
                 let xoButton: UIButton = {
                     let button = UIButton()
                     button.setTitleColor(.label, for: .normal)
@@ -56,9 +55,10 @@ class GamePageView : UIView {
                     button.layer.cornerRadius = 15
                     return button
                 }()
+                
                 buttons.append(xoButton)
                 xoButton.tag = ((x - 1) * 3) + y - 1
-                verticalStackView.addArrangedSubview(xoButton)
+                horizontalStackView.addArrangedSubview(xoButton)
             }
         }
     }
@@ -68,19 +68,18 @@ class GamePageView : UIView {
         setupIsTurn()
         setupHorizantalStackView()
         setupVerticalStackViewsAndButtons()
-        
     }
     
     // MARK: - Targets
     
-    @objc func buttonTapped(_ sender: UIButton) {
+    @objc private func buttonTapped(_ sender: UIButton) {
         delegate?.buttonDidTappedP(tag:sender.tag)
     }
 }
 
+// MARK: - SnapKit Part
 extension GamePageView {
-    
-    func setupIsTurn() {
+    private func setupIsTurn() {
         addSubview(isTurn)
         
         isTurn.snp.makeConstraints { make in
@@ -89,7 +88,7 @@ extension GamePageView {
         }
     }
     
-    func setupHorizantalStackView() {
+    private func setupHorizantalStackView() {
         addSubview(horizantalStackView)
         
         horizantalStackView.snp.makeConstraints { make in

@@ -5,9 +5,8 @@
 //  Created by Kadir Yasin Özmen on 2.06.2023.
 //
 
-import UIKit
+import UIKit.UIView
 import SnapKit
-import Firebase
 
 class AccountPageView: UIView {
 //MARK: - Properties

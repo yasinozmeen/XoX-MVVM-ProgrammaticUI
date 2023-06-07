@@ -53,7 +53,7 @@ class LoginPageView : UIView {
     }
     
     // MARK: - Targets
-    @objc func didTappedSignButton() {
+    @objc private func didTappedSignButton() {
         delegate?.loginButtonTapped(mail: usernameTF.text!, password: passwordTF.text!)
     }
     

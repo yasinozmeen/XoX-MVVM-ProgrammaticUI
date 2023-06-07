@@ -7,7 +7,7 @@
 
 import UIKit.UIViewController
 import SnapKit
-import Firebase
+import FirebaseFirestore
 
 final class GamePageVC: UIViewController {
     // MARK: - Properties
@@ -39,7 +39,7 @@ final class GamePageVC: UIViewController {
     }
     
 }
-// sanırım burası gereksiz bir katman direk viewmodele bağlanabilirdik dimi abi ?
+// MARK: - Protocol Func Part
 extension GamePageVC : GameProtocol {
     
     func showAlert(title:String,
@@ -65,6 +65,7 @@ extension GamePageVC : GameProtocol {
     func buttonDidTappedP(tag:Int) {
         viewModel.buttonDidTapped(tag: tag)
     }
+    
     func restartBoard() {
         for button in gamePageView.buttons{
             button?.setTitle(nil, for: .normal)

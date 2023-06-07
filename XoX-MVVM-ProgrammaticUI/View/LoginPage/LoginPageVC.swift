@@ -23,11 +23,8 @@ final class LoginPageVC: UIViewController {
 // MARK: - Functions
     private func configure () {
         view.addSubview(loginPageView)
-        
-        /// Delegation Equalization
         loginPageView.delegate = self
         viewModel.delegate = self
-        
         setupLoginPageView()
         navigationControllerBackButtonIsHidden(true)
     }
@@ -54,14 +51,12 @@ extension LoginPageVC: LoginDelegate {
         navigationController?.pushViewController(TabBarController(), animated: true)
     }
     
-    
     func showAlert(title: String?, message: String?, style: UIAlertController.Style, firstActionTitle: String?, actionStyle: UIAlertAction.Style) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         let firstAlertAction = UIAlertAction(title: firstActionTitle, style: actionStyle)
         alertController.addAction(firstAlertAction)
         present(alertController, animated: true)
     }
-    
     
     func createUserShowAlert(title: String?, message: String?, style: UIAlertController.Style, firstActionTitle: String?, secondActionTitle: String?, actionStyle: UIAlertAction.Style, handler: ((String?) -> Void)?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
