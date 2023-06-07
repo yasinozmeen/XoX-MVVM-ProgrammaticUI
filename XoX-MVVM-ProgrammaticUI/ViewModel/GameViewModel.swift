@@ -78,6 +78,7 @@ class GameViewModel {
                 self.checkPlayIsTrue(tag: tag) { bool in
                     if bool {
                         self.sendGameValue(tag: tag)
+                        self.changeButtonTitle(tag: tag, meOrHe: true)
                     }
                 }
             }
@@ -96,8 +97,10 @@ class GameViewModel {
                     return
                 }
                 saveDataToModel(data: data)
+                changeButtonTitle(tag: nil, meOrHe: false)
                 changeTurnLabel()
             }
+        
     }
     
     private func saveDataToModel(data: [String:Any]){
@@ -149,15 +152,19 @@ class GameViewModel {
             }else{
                 delegate?.changeTurnLabelP(turnIs: "turn: " + ConstantsGame.O.rawValue)
             }
-            
         }
-        
     }
     
     func changeButtonTitle(tag:Int?, meOrHe:Bool) {
-       
+        if let gameData = gameData, let currentUser = currentUser {
+            for data in gameData.row {
+                if data.value != currentUser && data.value != " " {
+                    delegate?.buttonTitleChange(title: ConstantsGame.O.rawValue, tag: data.key - 1)
+                }
+                if data.value == currentUser {
+                    delegate?.buttonTitleChange(title: ConstantsGame.X.rawValue, tag: data.key - 1)
+                }
+            }
+        }
     }
-    
-   
-    
 }

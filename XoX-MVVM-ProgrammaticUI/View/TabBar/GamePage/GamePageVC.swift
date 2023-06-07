@@ -40,10 +40,10 @@ final class GamePageVC: UIViewController {
     }
     
 }
-
+// sanırım burası gereksiz bir katman direk viewmodele bağlanabilirdik dimi abi ?
 extension GamePageVC : GameProtocol {
     func buttonTitleChange(title: String, tag: Int) {
-        
+        gamePageView.buttons[tag]?.setTitle(title, for: .normal)
     }
     
     func changeTurnLabelP(turnIs:String) {
