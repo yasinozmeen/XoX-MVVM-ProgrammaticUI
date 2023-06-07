@@ -25,7 +25,7 @@ class GamePageView : UIView {
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.spacing = UIScreen.main.bounds.width * 0.009
-        stackView.backgroundColor = .label
+//        stackView.backgroundColor = .label
         return stackView
     }()
     var buttons:[UIButton?] = []
@@ -50,13 +50,14 @@ class GamePageView : UIView {
                     let button = UIButton()
                     button.setTitleColor(.label, for: .normal)
                     button.titleLabel?.font = UIFont(name: "Helvetica", size: 35)
-                    button.backgroundColor = .systemGray6
+                    button.backgroundColor = .systemGray5
                     button.isUserInteractionEnabled = true
                     button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+                    button.layer.cornerRadius = 15
                     return button
                 }()
                 buttons.append(xoButton)
-                xoButton.tag = ((x - 1) * 3) + y
+                xoButton.tag = ((x - 1) * 3) + y - 1
                 verticalStackView.addArrangedSubview(xoButton)
             }
         }

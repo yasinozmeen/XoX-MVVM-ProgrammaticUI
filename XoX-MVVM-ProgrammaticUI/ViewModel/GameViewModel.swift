@@ -12,6 +12,10 @@ protocol GameProtocol: AnyObject {
     func buttonDidTappedP(tag:Int)
     func changeTurnLabelP(turnIs:String)
     func buttonTitleChange(title: String, tag: Int)
+    func showAlert(title:String,
+                   style: UIAlertController.Style,
+                   actiontitle:String,
+                   actionStyle:UIAlertAction.Style)
 }
 
 class GameViewModel {
@@ -60,8 +64,9 @@ class GameViewModel {
     
     private func createGameCollection(handler: @escaping ()->()) {
         fireBaseDataBase.collection("Game").document(matchUsers[0]+matchUsers[1]).setData([
-            "row":["1":" ","2":" ","3":" ","4":" ","5":" ","6":" ","7":" ","8":" ","9":" ",],
-            "lastUser":currentUser ?? "Error"
+            "row":["0":" ","1":" ","2":" ","3":" ","4":" ","5":" ","6":" ","7":" ","8":" ",],
+            "lastUser":currentUser ?? "Error",
+            "whoWin":" "
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
@@ -78,7 +83,7 @@ class GameViewModel {
                 self.checkPlayIsTrue(tag: tag) { bool in
                     if bool {
                         self.sendGameValue(tag: tag)
-                        self.changeButtonTitle(tag: tag, meOrHe: true)
+                        self.changeButtonTitle(tag: tag)
                     }
                 }
             }
@@ -97,7 +102,7 @@ class GameViewModel {
                     return
                 }
                 saveDataToModel(data: data)
-                changeButtonTitle(tag: nil, meOrHe: false)
+                changeButtonTitle(tag: nil)
                 changeTurnLabel()
             }
         
@@ -110,6 +115,9 @@ class GameViewModel {
             gameData = try JSONDecoder().decode(GameModel.self, from: jsonData)
         } catch {
             print("Hata: \(error)")
+        }
+        isHeWon() {
+            restartGame()
         }
     }
     
@@ -155,16 +163,79 @@ class GameViewModel {
         }
     }
     
-    func changeButtonTitle(tag:Int?, meOrHe:Bool) {
+    func changeButtonTitle(tag:Int?) {
         if let gameData = gameData, let currentUser = currentUser {
             for data in gameData.row {
                 if data.value != currentUser && data.value != " " {
-                    delegate?.buttonTitleChange(title: ConstantsGame.O.rawValue, tag: data.key - 1)
+                    delegate?.buttonTitleChange(title: ConstantsGame.O.rawValue, tag: data.key)
                 }
                 if data.value == currentUser {
-                    delegate?.buttonTitleChange(title: ConstantsGame.X.rawValue, tag: data.key - 1)
+                    delegate?.buttonTitleChange(title: ConstantsGame.X.rawValue, tag: data.key)
+                    checkWinCondition { [self] bool in
+                        if bool {
+                         sendWinValue()
+                            delegate?.showAlert(title:ConstantsGamePage.win.rawValue,
+                                                style: .alert,
+                                                actiontitle: ConstantsGamePage.ok.rawValue,
+                                                actionStyle: .default)
+                        }
+                    }
                 }
             }
         }
     }
+    
+// MARK: - Game Rules
+    func checkWinCondition(handler: @escaping (Bool)->())  {
+        if let gameData = gameData, let currentUser = currentUser {
+            let winCombinations: [[Int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9], // horizantal wins
+                                            [1, 4, 7], [2, 5, 8], [3, 6, 9], // vertical wins
+                                            [1, 5, 9], [3, 5, 7]] // cross wins
+            
+            for combination in winCombinations {
+                let firstIndex = combination[0]
+                let secondIndex = combination[1]
+                let thirdIndex = combination[2]
+                
+                if gameData.row[firstIndex] == currentUser &&
+                    gameData.row[secondIndex] == currentUser &&
+                    gameData.row[thirdIndex] == currentUser {
+                    handler(true)
+                }
+            }
+            handler(false)
+        }
+        handler(false)
+    }
+    func sendWinValue() {
+        if let currentUser = currentUser {
+            fireBaseDataBase.collection("Game").document(matchUsers[0]+matchUsers[1]).updateData([
+                "whoWin":currentUser
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                }
+            }
+        }
+    }
+    func isHeWon(handler: ()->()) {
+        if let whoWin = gameData?.whoWin, let currentUser = currentUser  {
+            if whoWin != currentUser && whoWin != " "{
+                delegate?.showAlert(title: ConstantsGamePage.lose.rawValue,
+                                    style: .alert,
+                                    actiontitle: ConstantsGamePage.ok.rawValue,
+                                    actionStyle: .cancel)
+            }
+        }
+    }
+    func restartGame() {
+        
+    }
+    
+    func checkBoardIsFull(handler: @escaping (Bool)->()) {
+        
+    }
+    
+    
 }

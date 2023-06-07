@@ -70,7 +70,6 @@ final class LoginViewModel {
             } else {
             }
         }
-        // gamepage e gitmeden onceki son fonksiyon
     }
 }
 

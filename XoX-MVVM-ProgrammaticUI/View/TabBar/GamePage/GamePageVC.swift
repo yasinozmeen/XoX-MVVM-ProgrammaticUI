@@ -15,7 +15,6 @@ final class GamePageVC: UIViewController {
     let viewModel        = GameViewModel()
     let fireBaseDataBase = Firestore.firestore()
     var currentUser: String?
-//    var gameProtocol:GameProtocol?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -42,6 +41,19 @@ final class GamePageVC: UIViewController {
 }
 // sanırım burası gereksiz bir katman direk viewmodele bağlanabilirdik dimi abi ?
 extension GamePageVC : GameProtocol {
+    
+    func showAlert(title:String,
+                   style: UIAlertController.Style,
+                   actiontitle:String,
+                   actionStyle:UIAlertAction.Style) {
+        let alertController = UIAlertController(title: title, message: nil, preferredStyle: style)
+        let alertAction = UIAlertAction(title: actiontitle, style: actionStyle) { action in
+            
+        }
+        alertController.addAction(alertAction)
+        present(alertController, animated: true)
+    }
+    
     func buttonTitleChange(title: String, tag: Int) {
         gamePageView.buttons[tag]?.setTitle(title, for: .normal)
     }

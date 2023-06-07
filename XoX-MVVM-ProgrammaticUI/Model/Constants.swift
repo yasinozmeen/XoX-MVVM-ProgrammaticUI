@@ -45,6 +45,7 @@ public enum ConstantsGamePage: String {
     case win  = "you win"
     case lose = "you lose"
     case tied = "you tied"
+    case ok   = "ok"
 }
 
 // MARK: - ConstantsAccountPage

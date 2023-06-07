@@ -10,4 +10,5 @@ import Foundation
 struct GameModel: Codable {
     var lastUser: String
     var row: [Int : String]
+    var whoWin: String? 
 }
