@@ -17,7 +17,6 @@
 		843BDFDA2A29EEB2009B4EAC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 843BDFD92A29EEB2009B4EAC /* SnapKit */; };
 		843BDFDC2A29EF96009B4EAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843BDFDB2A29EF96009B4EAC /* GoogleService-Info.plist */; };
 		843BDFE62A29F84D009B4EAC /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFE52A29F84D009B4EAC /* LoginPageView.swift */; };
-		843BDFE92A29F93F009B4EAC /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFE82A29F93F009B4EAC /* View+Ext.swift */; };
 		843BDFEB2A29FE29009B4EAC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFEA2A29FE29009B4EAC /* Constants.swift */; };
 		843BDFF02A2A0ECC009B4EAC /* GamePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BDFEF2A2A0ECC009B4EAC /* GamePageVC.swift */; };
 		843BE0222A2A1836009B4EAC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE0212A2A1836009B4EAC /* TabBarController.swift */; };
@@ -26,6 +25,7 @@
 		843BE02A2A2A78D4009B4EAC /* AccountPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE0292A2A78D4009B4EAC /* AccountPageView.swift */; };
 		843BE02C2A2A7B75009B4EAC /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE02B2A2A7B75009B4EAC /* UILabel+Ext.swift */; };
 		84B2B8682A2BAC94007A18FF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B8672A2BAC94007A18FF /* LoginViewModel.swift */; };
+		84B9E0AF2A30FCE60050596A /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9E0AE2A30FCE60050596A /* UITextField+Ext.swift */; };
 		84C20D0C2A2F64B600726F55 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 84C20D0B2A2F64B600726F55 /* FirebaseAuth */; };
 		84C20D0E2A2F64B600726F55 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 84C20D0D2A2F64B600726F55 /* FirebaseDatabase */; };
 		84C20D102A2F64B600726F55 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 84C20D0F2A2F64B600726F55 /* FirebaseFirestore */; };
@@ -44,7 +44,6 @@
 		843BDFCC2A29EBD9009B4EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843BDFDB2A29EF96009B4EAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		843BDFE52A29F84D009B4EAC /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
-		843BDFE82A29F93F009B4EAC /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		843BDFEA2A29FE29009B4EAC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		843BDFEF2A2A0ECC009B4EAC /* GamePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePageVC.swift; sourceTree = "<group>"; };
 		843BE0212A2A1836009B4EAC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		843BE0292A2A78D4009B4EAC /* AccountPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPageView.swift; sourceTree = "<group>"; };
 		843BE02B2A2A7B75009B4EAC /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		84B2B8672A2BAC94007A18FF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		84B9E0AE2A30FCE60050596A /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
 		84F954852A2E4AB200F64819 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,8 +186,8 @@
 		843BDFE72A29F92C009B4EAC /* View+Ext */ = {
 			isa = PBXGroup;
 			children = (
-				843BDFE82A29F93F009B4EAC /* View+Ext.swift */,
 				843BE02B2A2A7B75009B4EAC /* UILabel+Ext.swift */,
+				84B9E0AE2A30FCE60050596A /* UITextField+Ext.swift */,
 			);
 			path = "View+Ext";
 			sourceTree = "<group>";
@@ -294,13 +294,13 @@
 				843BDFC32A29EBD8009B4EAC /* LoginPageVC.swift in Sources */,
 				843BE0262A2A61FE009B4EAC /* GamePageView.swift in Sources */,
 				843BDFBF2A29EBD8009B4EAC /* AppDelegate.swift in Sources */,
+				84B9E0AF2A30FCE60050596A /* UITextField+Ext.swift in Sources */,
 				8430A5922A2CF08F0025C824 /* GameViewModel.swift in Sources */,
 				843BE0242A2A2A3C009B4EAC /* AccountPageVC.swift in Sources */,
 				84F954862A2E4AB200F64819 /* GameModel.swift in Sources */,
 				843BE02A2A2A78D4009B4EAC /* AccountPageView.swift in Sources */,
 				843BDFF02A2A0ECC009B4EAC /* GamePageVC.swift in Sources */,
 				84B2B8682A2BAC94007A18FF /* LoginViewModel.swift in Sources */,
-				843BDFE92A29F93F009B4EAC /* View+Ext.swift in Sources */,
 				843BDFC12A29EBD8009B4EAC /* SceneDelegate.swift in Sources */,
 				843BDFE62A29F84D009B4EAC /* LoginPageView.swift in Sources */,
 				843BDFEB2A29FE29009B4EAC /* Constants.swift in Sources */,

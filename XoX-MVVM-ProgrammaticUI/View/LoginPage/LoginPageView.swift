@@ -6,37 +6,32 @@
 
 // iphone 14 resulation is 844x320
 
-import UIKit
+import UIKit.UIView
 import SnapKit
 
 class LoginPageView : UIView {
     
-// MARK: - Properties
+    // MARK: - Properties
     weak var delegate: LoginDelegate?
     typealias constant = ConstantsLoginPage
     
     // MARK: - UI Elements
-    private let XoXTitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = constant.title.rawValue
-        label.textColor = .label
-        label.font = UIFont.systemFont(ofSize: 48, weight: .bold)
-        return label
-    }()
-    private let usernameTF: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .roundedRect
-        tf.placeholder = constant.username.rawValue
-        tf.text = "yasinozmeen2@gmail.com"
-        return tf
-    }()
-    private let passwordTF: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .roundedRect
-        tf.placeholder = constant.password.rawValue
-        tf.text = "Ykjoker.123"
-        return tf
-    }()
+    private let XoXTitleLabel = CustomUILabel(text: constant.title.rawValue, fontSize: 48, weight: .bold)
+    
+    private let usernameTF = CustomUITextfield(
+        placeholder: constant.username.rawValue,
+        keyboardType: .emailAddress,
+        textType: .emailAddress,
+        AutocapitalizationType: .none,
+        isSecure: false)
+    
+    private let passwordTF = CustomUITextfield(
+        placeholder: constant.password.rawValue,
+        keyboardType: .default,
+        textType: .password,
+        AutocapitalizationType: .none,
+        isSecure: true)
+
     private let signButton: UIButton = {
         let button = UIButton()
         button.setTitle(constant.button.rawValue, for: .normal)
@@ -70,7 +65,7 @@ extension LoginPageView {
     
     private func setupXoXTitleLabel() {
         self.addSubview(XoXTitleLabel)
-
+        
         XoXTitleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(UIScreen.main.bounds.height * 0.1184834123)
             make.centerX.equalToSuperview()

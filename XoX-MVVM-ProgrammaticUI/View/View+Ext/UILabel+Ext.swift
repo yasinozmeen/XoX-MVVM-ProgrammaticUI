@@ -5,13 +5,12 @@
 //  Created by Kadir Yasin Özmen on 2.06.2023.
 //
 
-import UIKit
+import UIKit.UILabel
 
 class CustomUILabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
     }
     
     required init?(coder: NSCoder) {
@@ -21,10 +20,6 @@ class CustomUILabel: UILabel {
     convenience init(text:String, fontSize:CGFloat, weight: UIFont.Weight) {
         self.init(frame: .zero)
         set(text: text, fontSize: fontSize, weight: weight)
-    }
-    
-    func configure() {
-        
     }
     
     private func set(text:String, fontSize:CGFloat, weight: UIFont.Weight) {
