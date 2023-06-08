@@ -9,6 +9,6 @@ The aim in this application was to understand the MVVM architecture and establis
 
 ### Application Screenshots 
 
-<code><img height="550" src="https://github.com/yasinozmeen/XoX-MVVM-ProgrammaticUI/blob/main/readmeSources/LoginPage.jpeg"></code>
-<code><img height="550" src="https://github.com/yasinozmeen/XoX-MVVM-ProgrammaticUI/blob/main/readmeSources/GamePage.png"></code>
-<code><img height="550" src="https://github.com/yasinozmeen/XoX-MVVM-ProgrammaticUI/blob/main/readmeSources/AccountPage.png"></code>
+<code><img height="400" src="https://github.com/yasinozmeen/XoX-MVVM-ProgrammaticUI/blob/main/readmeSources/LoginPage.jpeg"></code>
+<code><img height="400" src="https://github.com/yasinozmeen/XoX-MVVM-ProgrammaticUI/blob/main/readmeSources/GamePage.png"></code>
+<code><img height="400" src="https://github.com/yasinozmeen/XoX-MVVM-ProgrammaticUI/blob/main/readmeSources/AccountPage.png"></code>
