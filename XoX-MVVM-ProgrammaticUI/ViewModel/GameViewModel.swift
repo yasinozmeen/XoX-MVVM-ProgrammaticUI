@@ -120,7 +120,7 @@ class GameViewModel {
     
     /// It pulls game data from Firebase Firestore.Then it calls the saceDataModel, changeButtonTitle, changeTurnLabel, and checkBoardIsFull functions.
     private func fetchGameData() {
-        fireBaseDataBase.collection("Game").document("yasinozmeen2@gmail.comyasinozmeen3@gmail.com")
+        fireBaseDataBase.collection("Game").document(matchUsers[0]+matchUsers[1])
             .addSnapshotListener { [self] documentSnapshot, error in
                 guard let document = documentSnapshot else {
                     print(error?.localizedDescription as Any)
