@@ -91,7 +91,7 @@ final class LoginViewModel {
         fireBaseDataBase.collection("User").document(mail).setData([
             "is online":true
         ]) { err in
-            #warning("error handling yap")
+            print(err?.localizedDescription as Any)
         }
     }
 }

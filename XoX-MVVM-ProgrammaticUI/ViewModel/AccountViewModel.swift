@@ -23,12 +23,12 @@ final class AccountViewModel {
     
     // MARK: - Functions
     /// The function called when the "signOut" button is clicked. After that, the saveUserOffline and restartApplication functions are called
-    func singOut(){
+    func singOut() throws {
         lastUserMail = firebaseAuth.currentUser?.email
         do {
             try firebaseAuth.signOut()
         } catch _ as NSError {
-            #warning("error handling")
+            throw AccountViewModelError.firebaseAuthSingOut
         }
         saveUserOfline {
             self.restartApplication()
@@ -42,7 +42,7 @@ final class AccountViewModel {
             fireBaseDataBase.collection("User").document(mail).setData([
                 "is online":false
             ]) { err in
-#warning("error handling")
+                print(err?.localizedDescription as Any)
             }
             handler()
         }

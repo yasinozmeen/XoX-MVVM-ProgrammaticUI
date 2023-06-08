@@ -63,7 +63,7 @@ class GameViewModel {
         fireBaseDataBase.collection("User").whereField("is online", isEqualTo: true)
             .addSnapshotListener { [self] querySnapshot, error in
                 guard let documents = querySnapshot?.documents else {
-                    #warning("error handling")
+                    print(error?.localizedDescription as Any)
                     return
                 }
                 self.onlineUsers = []
@@ -96,7 +96,7 @@ class GameViewModel {
             "lastUser":currentUser ?? "Error",
             "whoWin":" "
         ]) { err in
-#warning("error handling")
+            print(err?.localizedDescription as Any)
         }
         handler()
     }
@@ -123,11 +123,10 @@ class GameViewModel {
         fireBaseDataBase.collection("Game").document("yasinozmeen2@gmail.comyasinozmeen3@gmail.com")
             .addSnapshotListener { [self] documentSnapshot, error in
                 guard let document = documentSnapshot else {
-#warning("error handling")
+                    print(error?.localizedDescription as Any)
                     return
                 }
                 guard let data = document.data() else {
-#warning("error handling")
                     return
                 }
                 saveDataToModel(data: data)
@@ -142,7 +141,6 @@ class GameViewModel {
                     }
                 }
             }
-        
     }
     
     /// It assigns the data given as a data parameter to the gameData variable of type GameDataModel.
@@ -194,8 +192,7 @@ class GameViewModel {
             "lastUser":currentUser ?? "Error"
         ]) { err in
             if let err = err {
-#warning("error handling")
-            } else {
+                print(err.localizedDescription)
             }
         }
         changeTurnLabel()
@@ -268,7 +265,7 @@ class GameViewModel {
                 "whoWin":currentUser
             ]) { err in
                 if let err = err {
-#warning("error handling")
+                    print(err.localizedDescription)
                 } else {
                 }
             }
@@ -302,8 +299,10 @@ class GameViewModel {
     /// It equates the gameData variable to nil and calls the signOut function from AccountViewModel.
     func restartGame() {
         gameData?.whoWin = nil
-        AccountViewModel().singOut()
+        do{
+            try AccountViewModel().singOut()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
-
-    
 }

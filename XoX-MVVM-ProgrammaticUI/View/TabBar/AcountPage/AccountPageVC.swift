@@ -38,7 +38,11 @@ final class AccountPageVC: UIViewController {
 // MARK: - Delegate Part
 extension AccountPageVC: AccountDelegate{
     func signOutButtonTapped() {
-        viewModel.singOut()
+        do{
+            try viewModel.singOut()
+        }catch{
+            print(error.localizedDescription)
+        }
     }
 }
 
